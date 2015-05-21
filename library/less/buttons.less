@@ -1,0 +1,290 @@
+//
+// Buttons
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+// Core
+.btn {
+  display: inline-block;
+  .ie7-inline-block();
+  padding: .25em .75em;
+  margin-bottom: .33em; // For input.btn
+  font-family: @sansFontFamily;
+  font-size: @largeFontSize;
+  font-weight: @boldWeight;
+  line-height: @baseLineHeight;
+  *line-height: @baseLineHeight;
+  text-align: left;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid @gray;
+  .ie7-restore-left-whitespace(); // Give IE7 some love
+  background: @yellow;
+  border-style: solid;
+  border-width: 1px;
+ 
+  // Hover state
+  &:hover {
+    color: @white;
+    text-decoration: none;
+    //background-color: darken(@white, 10%);
+    //*background-color: darken(@white, 15%); /* Buttons in IE7 don't get borders, so darken on hover */
+   // background-position: 0 -15px;
+
+    // transition is only when going to hover, otherwise the background
+    // behind the gradient (there for IE<=9 fallback) gets mismatched
+    //.transition(background-position .1s linear);
+  }
+
+  // Focus state for keyboard and accessibility
+  &:focus {
+    .tab-focus();
+  }
+  
+  // Active state
+  &.active,
+  &:active {
+    background-color: lighten(@orange, 20%); // "transparent" is default to differentiate :hover from .active
+    color: @white;
+    .box-shadow(inset 0 0 1em @medOrange);
+    border-color: @orange;
+  }
+
+  // Disabled state
+  &.disabled,
+  &[disabled] {
+    cursor: default;
+    background-color: darken(@white, 10%);
+    background-image: none;
+    .opacity(65);
+    .box-shadow(none);
+  }
+
+}
+
+
+
+// Button Sizes
+// --------------------------------------------------
+
+// Large
+.btn-large {
+  font-size: @largestFontSize;
+  line-height: normal;
+  padding: .5em 1em;
+}
+/*.btn-large [class^="icon-"] {
+  margin-top: 2px;
+}*/
+
+// Small
+.btn-small {
+  padding: 3px 9px;
+  font-size: @baseFontSize - 2px;
+  line-height: @baseLineHeight - 2px;
+}
+.btn-small [class^="icon-"] {
+  margin-top: 0;
+}
+
+// Mini
+.btn-mini {
+  padding: 2px 6px;
+  font-size: @baseFontSize - 3px;
+  line-height: @baseLineHeight - 3px;
+}
+
+
+// Block button
+// -------------------------
+
+.btn-block {
+  display: block;
+  width: auto;
+  padding-left: .75em;
+  padding-right: .75em;
+  text-decoration: none;
+  .box-sizing(border-box);
+  &:hover{
+      text-decoration: none;
+  }
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+// Provide *some* extra contrast for those who can get it
+.btn-primary.active,
+.btn-warning.active,
+.btn-danger.active,
+.btn-success.active,
+.btn-info.active,
+.btn-inverse.active {
+  color: rgba(255,255,255,.75);
+}
+
+// Set the backgrounds
+// -------------------------
+.btn {
+  // reset here as of 2.0.3 due to Recess property order
+  background: lighten(@yellowLight, 10%);
+  .box-shadow(inset 0 0 1em @yellow);
+  color: @orange;
+  border-color: @yellow;
+  &:hover, .active {
+    background-color: lighten(@orange, 20%); // "transparent" is default to differentiate :hover from .active
+    color: @white;
+    .box-shadow(inset 0 0 1em @medOrange);
+    border-color: @orange;
+    text-decoration: none;
+  }
+}
+.btn-primary {
+  background: @orangeLight;
+  .box-shadow(inset 0 0 1em @medOrange);
+  color: @white;
+  border-color: @orange;
+  &:hover {
+      border-color: @orange;
+    background-color: @orange; // "transparent" is default to differentiate :hover from .active
+    .box-shadow(inset 0 0 1em @red);
+  }
+}
+// Warning appears are orange
+.btn-warning {
+  background-color: @orange; // "transparent" is default to differentiate :hover from .active
+    .box-shadow(inset 0 0 1em @red);
+  color: @white;
+  border-color: @red;
+  &:hover {
+      border-color: @red;
+    background-color: @red; // "transparent" is default to differentiate :hover from .active
+    .box-shadow(inset 0 0 1em @deepRed);
+  }
+}
+// Danger and error appear as red
+.btn-danger {
+  background: @red;
+  .box-shadow(inset 0 0 1em @deepRed);
+  color: @white;
+  border-color: @deepRed;
+  &:hover {
+      border-color: @deepRed;
+    background-color: @deepRed; // "transparent" is default to differentiate :hover from .active
+    .box-shadow(inset 0 0 1em darken(@deepRed, 20%));
+  }
+}
+// Success appears as green
+.btn-success {
+  background: @green;
+  .box-shadow(inset 0 0 1em darken(@green, 25%));
+  color: @white;
+  border-color: darken(@green, 25%);
+  &:hover {
+      border-color: darken(@green, 25%);
+    background-color: darken(@green, 15%); // "transparent" is default to differentiate :hover from .active
+    .box-shadow(inset 0 0 1em darken(@green, 35%));
+  }
+}
+// Info appears as a neutral blue
+.btn-info {
+  background: lighten(@blueDark, 33%);
+  .box-shadow(inset 0 0 1em @blueDark);
+  color: @white;
+  border-color: @blueDark;
+  &:hover {
+      border-color: @blueDark;
+    background-color: lighten(@blueDark, 10%); // "transparent" is default to differentiate :hover from .active
+    .box-shadow(inset 0 0 1em darken(@blueDark, 10%));
+  }
+}
+// Inverse appears as dark gray
+.btn-inverse {
+  .buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
+}
+
+
+
+// Cross-browser Jank
+// --------------------------------------------------
+
+button.btn,
+input[type="submit"].btn {
+
+  // Firefox 3.6 only I believe
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  // IE7 has some default padding on button controls
+  *padding-top: 3px;
+  *padding-bottom: 3px;
+
+  &.btn-large {
+    *padding-top: 7px;
+    *padding-bottom: 7px;
+  }
+  &.btn-small {
+    *padding-top: 3px;
+    *padding-bottom: 3px;
+  }
+  &.btn-mini {
+    *padding-top: 1px;
+    *padding-bottom: 1px;
+  }
+}
+
+
+// Link buttons
+// --------------------------------------------------
+
+// Make a button look and behave like a link
+.btn-link,
+.btn-link:active,
+.btn-link[disabled] {
+  background-color: transparent;
+  background-image: none;
+  .box-shadow(none);
+}
+.btn-link {
+  border-color: transparent;
+  cursor: pointer;
+  color: @linkColor;
+  .border-radius(0);
+}
+.btn-link:hover {
+  color: @linkColorHover;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.btn-link[disabled]:hover {
+  color: @grayDark;
+  text-decoration: none;
+}
+// Icons in Buttons
+.btn i{
+    margin-top: .33em;
+    margin-left: .75em;
+}
+.btn p{
+    margin: 0;
+}

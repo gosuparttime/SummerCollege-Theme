@@ -1,0 +1,309 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Body text
+// -------------------------
+
+p {
+  margin: .5em 0 .5em 0;
+  line-height: @baseLineHeight;
+}
+#main p{
+    margin-right: 2em;
+}
+.lead {
+  margin-bottom: @baseLineHeight;
+  font-size: @baseFontSize * 1.5;
+  font-weight: 200;
+  line-height: @baseLineHeight * 1.5;
+}
+.red {
+    color: @red;
+}
+.orange{
+    color: @orange;
+}
+.blue{
+    color: @blue;
+}
+// Emphasis & misc
+// -------------------------
+
+small, .small {
+  font-size: .875em; // Ex: 14px base font * 85% = about 12px
+}
+.large {
+    font-size: 1.125em;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+cite {
+  font-style: normal;
+}
+.btn p.emphasize{
+    font-size: @largestFontSize;
+    text-transform: uppercase;
+    line-height: @smallLineHeight;
+    font-weight: 700;
+    margin-bottom: 0em;
+}
+// Utility classes
+.muted {
+  color: @grayLight;
+}
+.text-warning {
+  color: @warningText;
+}
+.text-error {
+  color: @errorText;
+}
+.text-info {
+  color: @infoText;
+}
+.text-success {
+  color: @successText;
+}
+
+
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  margin: (@baseLineHeight / 2) 0;
+  font-family: @headingsFontFamily;
+  font-weight: @headingsFontWeight;
+  line-height: @baseLineHeight;
+  color: @headingsColor;
+  small {
+    font-weight: normal;
+    line-height: 1;
+    color: @grayLight;
+  }
+}
+h1 { 
+    font-size: @titleFontSize;
+    font-family: @sansFontFamily;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-weight: 400;
+    word-spacing: .25em;
+}
+h2 {
+    font-size: @largestFontSize;
+    border-bottom: 2px solid @gold;
+}
+h3 {
+    font-size: @largerFontSize; 
+    border-bottom: 2px solid @gray;
+}
+h4 {
+    font-size: @largeFontSize;
+    border-bottom: 1px solid @gray;
+}
+h5, tr th{
+    font-size: @baseFontSize;
+    color: @gray;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-weight: @boldWeight;
+    text-align: left;
+}
+h6 {
+    font-size: @baseFontSize;
+    color: @gray;
+}
+tr th{
+    color: @grayDark;
+}
+#inner-footer{
+    h1, h2, h3, h4, h5{
+        color: @white;
+    }
+    h3{
+        border-color: @yellow;
+        text-transform: uppercase;
+        font-weight: 700;
+        word-spacing: .25em;
+        margin-bottom: .25em;
+    }
+    h4{
+        color: @orange;
+        border-bottom: none;
+        margin-bottom: .25em;
+    }
+}
+// Page header
+// -------------------------
+
+.page-header {
+  display: block;
+  background: lighten(@yellowLight, 5%);
+  .box-shadow(inset 0 0 2em lighten(@yellow, 10%));
+  h1{
+      margin: 0;
+      padding: .25em .5em;
+      line-height: @largeFontSize;
+      font-weight: 400;    
+  }
+}
+.page-category h1{
+    padding:.5em .75em;
+    text-align: right;
+    font-weight: @boldWeight;
+    font-size: @largerFontSize;
+    color: @white;
+    margin:0;
+}
+
+
+// Lists
+// --------------------------------------------------
+
+// Unordered and Ordered lists
+ul, ol {
+  padding: 0;
+  margin: 0 0 @baseLineHeight / 2 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+li {
+  line-height: @baseLineHeight;
+}
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+// Description Lists
+dl {
+  margin-bottom: @baseLineHeight;
+}
+dt,
+dd {
+  line-height: @baseLineHeight;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: @baseLineHeight / 2;
+}
+// Horizontal layout (like forms)
+.dl-horizontal {
+  .clearfix(); // Ensure dl clears floats if empty dd elements present
+  dt {
+    float: left;
+    width: @horizontalComponentOffset - 20;
+    clear: left;
+    text-align: right;
+    .text-overflow();
+  }
+  dd {
+    margin-left: @horizontalComponentOffset;
+  }
+}
+
+// MISC
+// ----
+
+// Horizontal rules
+hr {
+  margin: .5em 0;
+  border: 0;
+  border-top: 1px solid @hrBorder;
+  border-bottom: 1px solid @white;
+}
+
+// Abbreviations and acronyms
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted @grayLight;
+}
+abbr.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+// Blockquotes
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 @baseLineHeight;
+  border-left: 5px solid @grayLighter;
+  p {
+    margin-bottom: 0;
+    #font > .shorthand(16px,300,@baseLineHeight * 1.25);
+  }
+  small {
+    display: block;
+    line-height: @baseLineHeight;
+    color: @grayLight;
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+
+  // Float right with text-align: right
+  &.pull-right {
+    float: right;
+    padding-right: 15px;
+    padding-left: 0;
+    border-right: 5px solid @grayLighter;
+    border-left: 0;
+    p,
+    small {
+      text-align: right;
+    }
+    small {
+      &:before {
+        content: '';
+      }
+      &:after {
+        content: '\00A0 \2014';
+      }
+    }
+  }
+}
+
+// Quotes
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+}
+
+// Addresses
+address {
+  display: block;
+  margin-bottom: @baseLineHeight;
+  font-style: normal;
+  line-height: @baseLineHeight;
+}
+#main .feature div.quote{
+    p{
+    font-size: @baseFontSize;
+    font-style: italic;
+    }
+    
+}
+ul.list-inline{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    clear: both;
+    li{
+        float: left;
+        margin-right: .5em;
+    }
+}

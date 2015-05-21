@@ -1,0 +1,26 @@
+/*!
+ * IE Dumb Down
+*/
+.navbar-inner,
+.btn,
+.page-header {
+  background: #fff7df;
+}
+ul.carousel-linked-nav button {
+  padding: .5em .75em;
+}
+ul#menu-footer-navigation li {
+  width: 45%;
+}
+.btn-primary {
+  background: #f9a84f;
+}
+.btn-primary:hover {
+  background: #ff8200;
+}
+.btn-info {
+  background: #3dadff;
+}
+.btn-info:hover {
+  background: #2c6b95;
+}

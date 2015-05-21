@@ -1,0 +1,159 @@
+/*
+Theme Name: Syracuse University - Summer College for High School Students
+Theme URI: http://summercollege.syr.edu/
+Description: A simple responsive theme based on the Bootstrap framework. Includes multiple page templates, two different sidebars and a theme options panel.
+Version: 1.0
+Author: Devin Kerr
+Author URI: http://www.dkerrcreative.com
+Tags: black, white, one-column, two-columns, flexible-width, custom-background, custom-colors, custom-menu, full-width-template, theme-options
+License: GNU General Public License v2.0 & Apache License 2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/licenses/LICENSE-2.0
+*/
+
+/* micro clearfix: http://nicolasgallagher.com/micro-clearfix-hack/ */
+/* For modern browsers */
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix {
+	zoom: 1;
+}
+/* wp-specific classes *//* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+.gallery-caption {
+}
+/* layout */
+span.wpcf7-list-item {
+	margin-left: 0;
+	margin-right: 1em;
+	margin-bottom: .5em;
+	display: block;
+}
+.fileinput-button {
+	position: relative;
+	overflow: hidden;
+	float: left;
+	margin-right: 4px;
+}
+.fileinput-button input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	transform: translate(-300px, 0) scale(4);
+	font-size: 23px;
+	direction: ltr;
+	cursor: pointer;
+}
+#MicrosoftTranslatorWidget #MSTWHeaderText{
+	display:none;
+}
+#MicrosoftTranslatorWidget #MSTWHeader span.MSTWBox select#MSTWMenu{
+	padding: 5px !important;
+	height:auto !important;
+	margin-bottom: .5em !important;
+	font-size: 12px !important;
+}
+#MicrosoftTranslatorWidget #MSTWHeader span.MSTWBox{
+	height:auto !important;
+	padding: .5em 0 !important;
+}
+.gce-page-grid .gce-calendar .gce-has-events {
+	position:relative;
+}
+.my-pop{
+	display:none;
+}
+label.error{
+	color: #ff5a00;
+	font-size: 87.5%;
+	font-weight: normal;
+	font-style: italic;
+}
