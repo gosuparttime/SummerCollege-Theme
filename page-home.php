@@ -169,7 +169,7 @@ wp_reset_postdata(); ?>
               <li><a href="#press" data-toggle="tab"><i class="icon icon-large icon-rss"></i>News & Press</a></li>
             </ul>
             <div class="tab-content">
-              <div class="tab-pane active" id="facebook"> <?php echo do_shortcode('[hungryfeed url="http://www.facebook.com/feeds/page.php?format=atom10&id=172166272825062" template="1" max_items="3" truncate_description="150"]'); ?> <a href="http://www.facebook.com/pages/Syracuse-University-Summer-College/172166272825062" target="_blank" class="btn btn-block"><i class="icon icon-play pull-right"></i>Visit Our Facebook Page</a> </div>
+              <div class="tab-pane active" id="facebook"> <?php echo do_shortcode('[custom-facebook-feed]'); ?> <a href="https://www.facebook.com/SUSummerCollege" target="_blank" class="btn btn-block"><i class="icon icon-play pull-right"></i>Visit Our Facebook Page</a> </div>
               <div class="tab-pane" id="twitter"> <?php myTweets('susummercollege'); ?> <a href="http://twitter.com/SUSummerCollege" target="_blank" class="btn btn-block"><i class="icon icon-play pull-right"></i>Visit Our Twitter Page</a> </div>
               <div class="tab-pane" id="press"> <?php echo do_shortcode('[hungryfeed url="http://news.syr.edu/?feed=rss" template="3" max_items="3" truncate_description="150"]'); ?> <a href="#" class="btn btn-block"><i class="icon icon-play pull-right"></i>Read more SU News</a> </div>
             </div>

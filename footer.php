@@ -14,7 +14,7 @@
       <div class="span3 hidden-phone">
         <div class="row-fluid"><h3>Follow Us</h3></div>
         <ul id="social">
-        <li><a href="http://www.facebook.com/pages/Syracuse-University-Summer-College/172166272825062" target="_blank"><img src="<?php bloginfo( 'stylesheet_directory' ); ?>/images/facebook-icon-up.png" alt="SU Summer College on Facebook" class="rollover"/></a></li>
+        <li><a href="https://www.facebook.com/SUSummerCollege" target="_blank"><img src="<?php bloginfo( 'stylesheet_directory' ); ?>/images/facebook-icon-up.png" alt="SU Summer College on Facebook" class="rollover"/></a></li>
         <li><a href="http://twitter.com/SUSummerCollege" target="_blank"><img src="<?php bloginfo( 'stylesheet_directory' ); ?>/images/twitter-icon-up.png" alt="SU Summer College on Twitter" class="rollover"/></a></li>
         </ul>
         <div class="row-fluid"><h3>Translate</h3>
@@ -65,5 +65,22 @@ window.onload = function(){
 }());
 </script>
 <!-- Summer College tracking pixel v2 / DigitalHyve -->
-
+<!-- Piwik -->
+<script type="text/javascript">
+ var _paq = _paq || [];
+ _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+ _paq.push(["setCookieDomain", "*.syr.edu"]);
+ _paq.push(["setDomains", ["*.syr.edu"]]);
+ _paq.push(['trackPageView']);
+ _paq.push(['enableLinkTracking']);
+ (function() {
+   var u="//its-suwi.syr.edu/";
+   _paq.push(['setTrackerUrl', u+'piwik.php']);
+   _paq.push(['setSiteId', 1]);
+   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+   g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+ })();
+</script>
+<noscript><p><img src="//its-suwi.syr.edu/piwik.php?idsite=1&rec=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 </body></html>
